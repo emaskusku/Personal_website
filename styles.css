@@ -384,10 +384,6 @@ body {
 
 @media screen and (max-width: 600px) {
 
-  .head p{
-    font-size: 10px;
-  }
-
   .cont-immagini{
     display: block;
     background-color: white;
