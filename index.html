@@ -13,7 +13,10 @@
     <div class='page'>
       <div class='upperbar'>
         <a href='#'><p class='name'><strong>EMANUELE</strong></p></a>
-        <ul class='menu'>
+        <picture class='toggle'>
+          <img id='togImg' src='images/List_menu_toggle-512.webp'/>
+        </picture>
+        <ul class='menu' id='menu'>
           <li><a href='#education'>EDUCATION</a></li>
           <li><a href='#experience'>EXPERIENCE</a></li>
           <li><a href='#computer'>COMPUTER SKILLS</a></li>
@@ -155,5 +158,37 @@
         </form>
       </div>
     </div>
+    <script type="text/javascript">
+      let tog = document.getElementById('togImg')
+      let menu = document.getElementById('menu')
+      const options = document.querySelectorAll("ul.menu > li > a");
+      
+      function activeMenu (){
+        if(!tog.classList.contains('clicked') && window.innerWidth < 800){
+          tog.classList.add("clicked");
+          menu.style.display = 'block'
+        } else if (window.innerWidth <= 800) {
+          tog.classList.remove("clicked");
+          menu.style.display = 'none'
+        }
+      }
+
+      function defBehavior(){
+        if(window.innerWidth > 800){
+          tog.classList.remove("clicked");
+          menu.style.display = 'block'
+        } else {
+          tog.classList.remove("clicked");
+          menu.style.display = 'none'
+        }
+      }
+
+      tog.addEventListener('click', activeMenu)
+      for(let ele of options){
+        ele.addEventListener('click', activeMenu)
+      }
+      window.addEventListener('resize', defBehavior);
+
+    </script>
   </body>
 </html>
