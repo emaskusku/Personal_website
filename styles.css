@@ -78,7 +78,8 @@ body {
   border-radius: 100px;
 }
 
-.head p{
+.head h1{
+  font-weight: normal;
   font-size: 70px;
   flex: 1;
   padding-left: 40px;
